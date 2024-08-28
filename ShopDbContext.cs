@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using hw_ShopDb.Entities;
+using hw_ShopDb.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace hw_ShopDb
@@ -11,13 +12,13 @@ namespace hw_ShopDb
     public class ShopDbContext : DbContext
     {
 
-        DbSet<Category> _categories;
-        DbSet<City> _cities;
-        DbSet<Country> _countries;
-        DbSet<Position> _positions;
-        DbSet<Product> _products;
-        DbSet<Shop> _shops;
-        DbSet<Worker> _workers;
+        public DbSet<Category> Category { get; set; }
+        public DbSet<City> City { get; set; }
+        public DbSet<Country> Country { get; set; }
+        public DbSet<Position> Position { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<Shop> Shop { get; set; }
+        public DbSet<Worker> Worker { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -155,6 +156,17 @@ namespace hw_ShopDb
                 .WithMany(ctg => ctg.Products)
                 .HasForeignKey(pr => pr.CategoryId)
                 .IsRequired(false);
+
+
+            //Initialization - Seeder
+            modelBuilder.SeedCountries();
+            modelBuilder.SeedCities();
+            modelBuilder.SeedShops();
+            modelBuilder.SeedCategories();
+            modelBuilder.SeedProducts();
+            modelBuilder.SeedPositions();
+            modelBuilder.SeedWorkers();
+
         }
 
     }

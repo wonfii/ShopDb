@@ -1,4 +1,6 @@
-﻿namespace hw_ShopDb
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace hw_ShopDb
 {
     internal class Program
     {
@@ -6,5 +8,7 @@
         {
             
         }
+
+        
     }
 }
