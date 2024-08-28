@@ -23,5 +23,7 @@ namespace hw_ShopDb.Entities
 
         public int Quantity { get; set; }
         public bool IsInStock { get; set; }
+
+        public ICollection<Shop> Shops { get; set;}
     }
 }

@@ -12,6 +12,6 @@ namespace hw_ShopDb.Entities
 
         public string Name { get; set; }
 
-        ICollection<Worker> Workers { get; set;}
+        public ICollection<Worker> Workers { get; set;}
     }
 }

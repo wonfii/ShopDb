@@ -10,5 +10,7 @@ namespace hw_ShopDb.Entities
     {
         public int CategoryId { get; set; }
         public string Name { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 }

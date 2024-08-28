@@ -20,8 +20,8 @@ namespace hw_ShopDb.Entities
 
         public int? ParkingArea { get; set; }
 
-        ICollection<Worker> Workers { get; set;}
+        public ICollection<Worker> Workers { get; set;}
 
-        ICollection<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

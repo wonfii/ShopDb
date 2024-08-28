@@ -11,6 +11,6 @@ namespace hw_ShopDb.Entities
         public int CountryId { get; set; }
         public string Name { get; set; }
 
-        ICollection<City> Cities { get; set;}
+        public ICollection<City> Cities { get; set;}
     }
 }
